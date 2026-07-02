@@ -1,0 +1,6 @@
+project: grok
+target: grk_decompress_fuzzer
+cmds:
+  - cmd: /mayhem/grk_decompress_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/grk_decompress_fuzzer.dict

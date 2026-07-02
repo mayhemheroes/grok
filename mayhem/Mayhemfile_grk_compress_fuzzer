@@ -1,0 +1,5 @@
+project: grok
+target: grk_compress_fuzzer
+cmds:
+  - cmd: /mayhem/grk_compress_fuzzer
+    libfuzzer: true

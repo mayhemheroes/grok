@@ -1,0 +1,52 @@
+# JPEG 2000 dictionary for grk_decompress_fuzzer.
+# Tokens are the codestream markers (ISO/IEC 15444-1) and JP2 box signatures
+# (ISO/IEC 15444-1 Annex I) the decoder dispatches on. Steering the fuzzer to
+# emit valid markers/box types lets it reach deeper parsing paths.
+
+# ── JP2 file format: signature box + box type FourCCs ──────────────────────────
+jp2_signature="\x00\x00\x00\x0c\x6a\x50\x20\x20\x0d\x0a\x87\x0a"
+box_ftyp="ftyp"
+box_jp2_brand="jp2\x20"
+box_jp2h="jp2h"
+box_ihdr="ihdr"
+box_colr="colr"
+box_bpcc="bpcc"
+box_pclr="pclr"
+box_cmap="cmap"
+box_cdef="cdef"
+box_res="res\x20"
+box_resc="resc"
+box_resd="resd"
+box_jp2c="jp2c"
+box_jp2i="jp2i"
+box_xml="xml\x20"
+box_uuid="uuid"
+box_url="url\x20"
+
+# ── J2K codestream delimiting markers ──────────────────────────────────────────
+marker_SOC="\xff\x4f"
+marker_SOT="\xff\x90"
+marker_SOD="\xff\x93"
+marker_EOC="\xff\xd9"
+
+# ── J2K fixed-information / functional markers ──────────────────────────────────
+marker_SIZ="\xff\x51"
+marker_COD="\xff\x52"
+marker_COC="\xff\x53"
+marker_RGN="\xff\x5e"
+marker_QCD="\xff\x5c"
+marker_QCC="\xff\x5d"
+marker_POC="\xff\x5f"
+marker_TLM="\xff\x55"
+marker_PLM="\xff\x57"
+marker_PLT="\xff\x58"
+marker_PPM="\xff\x60"
+marker_PPT="\xff\x61"
+marker_SOP="\xff\x91"
+marker_EPH="\xff\x92"
+marker_CRG="\xff\x63"
+marker_COM="\xff\x64"
+
+# ── HTJ2K / extended capability markers (ISO/IEC 15444-15) ──────────────────────
+marker_CAP="\xff\x50"
+marker_CPF="\xff\x59"
